@@ -4,6 +4,8 @@ body {
   background-repeat: repeat;
   background-attachment: fixed;  
   background-size: cover;
+  content: normal;
+  grid-row: auto;
  
 
 }
@@ -11,7 +13,12 @@ body {
 #neubar {
   background: #054D3B;
   font:white;
-  box-shadow: 4px 6px 12px rgba(0,0,0,0.4)
+  box-shadow: 4px 6px 12px rgba(0,0,0,0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
   
 }
 
@@ -938,6 +945,7 @@ h3, .h3 {
  }
 
  section{
+  position: relative;
   padding: 2rem;
  }
 
@@ -1018,8 +1026,97 @@ justify-content:space-between;}
   font-weight: 600;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseting */
 
 
+
+
+.container{
+    transform-style: preserve-3d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .box{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.container .box .body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 0.9s ease;
+    border-radius: 10px;
+}
+
+
+
+.container .box .body .imgContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+}
+
+.container .box .body .imgContainer img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.container .box .body .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+.container .box:hover .body{
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+.container .box .body .content div{
+    transform-style: preserve-3d;
+    padding: 20px;
+    background: linear-gradient(45deg, #054D3B,#FFEB3B);
+    transform: translateZ(100px);
+}
+
+.container .box .body .content div h3{
+    letter-spacing: 1px;
+}
+.core values{
+  object-position: 1rem;
+  margin: 20 px;
+}
  @media screen and (max-width: 780px) {
  
   .frame-3{
